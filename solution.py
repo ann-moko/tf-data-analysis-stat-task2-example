@@ -5,6 +5,6 @@ chat_id = 371784753 # Ваш chat ID, не меняйте название пе�
 
 def solution(p: float, x: np.array) -> tuple:
     alpha = 1 - p
-    left = (-min(-x) - 1 / 2) / (71**2 / 2)
-    right = (-np.log(alpha) / len(x)-min(-x)-1/2) / (71**2/2)
-    return left, right
+    min = (-x).min()
+    z_2 = -np.log(1-p)/x.size    
+    return 2*(-min-1/2)/(71*71), 2*(z_2-min-1/2)/(71*71)
